@@ -1,5 +1,5 @@
 module.exports = {
   mongoURI:
-    "mongodb://user1:password1@ds215739.mlab.com:15739/mern-stack-front-to-back",
-  secretOrKey: "secret"
+    "mongodb+srv://vik:jagtmagt@cluster0.ii4eu.mongodb.net/test?retryWrites=true&w=majority",
+  secretOrKey: "asjksd!@w345ua/gka623!sd>"
 };

@@ -1,8 +1,7 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description":
-    "[Udemy] MERN Stack Front To Back: Full Stack React, Redux &amp; Node.js [2018, ENG]",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix client",
@@ -21,12 +20,14 @@
   "bugs": {
     "url": "https://github.com/marley-nodejs/MERN-Stack-Front-To-Back/issues"
   },
-  "homepage":
-    "https://github.com/marley-nodejs/MERN-Stack-Front-To-Back#readme",
+  "homepage": "https://github.com/marley-nodejs/MERN-Stack-Front-To-Back#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "google-spreadsheet": "^3.0.13",
+    "googleapis": "^39.2.0",
     "gravatar": "^1.6.0",
     "jsonwebtoken": "^8.2.1",
     "mongoose": "^5.7.5",
@@ -36,6 +37,6 @@
   },
   "devDependencies": {
     "concurrently": "^3.5.1",
-    "nodemon": "^1.17.4"
+    "nodemon": "^1.19.4"
   }
 }

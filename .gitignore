@@ -1,4 +1,11 @@
 *.~
+#frontend
+frontend/node_modules/
+frontend/public/
+frontend/src/
+
+#trash
+trash/
 
 # Logs
 logs
