@@ -10,6 +10,7 @@ const fetch = require("node-fetch");
 const Subscription = require("../../models/Subscription");
 const User = require("../../models/User");
 
+// generates and sends back oauth url////////////////////////
 router.post(
   "/getoauthurl",
   passport.authenticate("jwt", { session: false }),
@@ -44,6 +45,7 @@ router.post(
   }
 );
 
+// adds google account(subscrition)//////////////////////////////////
 router.get("/addsubscription", (req, res) => {
   const TOKEN_PATH = "token12.json";
   fs.readFile("./credentials.json", (err, content) => {
@@ -71,12 +73,6 @@ router.get("/addsubscription", (req, res) => {
 
       // Store the token to disk for later program executions
 
-      console.log(JSON.stringify(token));
-      console.log(
-        "/////////////////////////////////////////////////////",
-        token.access_token
-      );
-
       let response = await fetch(
         "https://www.googleapis.com/oauth2/v2/userinfo",
         {
@@ -92,6 +88,7 @@ router.get("/addsubscription", (req, res) => {
         email: data.email,
         token,
       };
+
       User.findOne({ email: req.query.state }).then((user) => {
         if (user) {
           Subscription.findOne({ user, email: data.email })
@@ -119,6 +116,7 @@ router.get("/addsubscription", (req, res) => {
   };
 });
 
+// sends back google accounts which have been already added
 router.post(
   "/getgoogleaccounts",
   passport.authenticate("jwt", { session: false }),
@@ -134,6 +132,7 @@ router.post(
   }
 );
 
+// deletes google account(subscription)
 router.post(
   "/deletegoogleaccount",
   passport.authenticate("jwt", { session: false }),
@@ -148,4 +147,5 @@ router.post(
       .catch((err) => console.log(err));
   }
 );
+
 module.exports = router;
